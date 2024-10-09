@@ -1,0 +1,13 @@
+---
+import { CldImage } from "astro-cloudinary";
+
+const { imageUrl, width, height } = Astro.props;
+---
+
+<CldImage
+  src={imageUrl}
+  width={width}
+  height={height}
+  alt="Image"
+  sizes="100vw"
+/>
