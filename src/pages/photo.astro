@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { getCldImageUrl } from 'astro-cloudinary/helpers'
+
+const { searchParams } = Astro.url
+const id = searchParams.get('id')
+
+if (id === null) return Astro.redirect('/')
+
+const url = getCldImageUrl({ src: id })
+console.log(id, url)
+---
+
+<Layout title="Cloudinary Photo">
+  <main class="w-[800px] m-auto pt-[100px] text-center">
+    <img src={url} class="max-w-[100%] h-auto border-r-8" />
+    <small>{url}</small>
+  </main>
+</Layout>

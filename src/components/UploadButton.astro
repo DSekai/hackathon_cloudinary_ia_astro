@@ -1,13 +1,14 @@
 ---
-import { CldUploadWidget } from "astro-cloudinary";
+import { CldUploadWidget } from 'astro-cloudinary'
 ---
 
 <CldUploadWidget
+  id="upload-widget"
   options={{
-    uploadPreset: "hackathon-astro",
+    uploadPreset: 'hackathon-astro',
     multiple: false,
     maxFiles: 1,
-    sources: ["local", "camera"],
+    sources: ['local', 'camera'],
   }}
 >
   <button class="bg-orange-400 px-2 py-1 rounded-md">Upload</button>

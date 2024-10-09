@@ -1,13 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import BackgroudReplace from "../sections/BackgroundReplace.astro";
-import Wrapper from "../layouts/Wrapper.astro";
+import Layout from '../layouts/Layout.astro'
+import BackgroudReplace from '../sections/BackgroundReplace.astro'
+import Wrapper from '../layouts/Wrapper.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<Wrapper>
-			<BackgroudReplace />
-		</Wrapper>
-	</main>
+  <main>
+    <Wrapper>
+      <BackgroudReplace />
+    </Wrapper>
+  </main>
 </Layout>
+
+<script>
+  const widget = document.getElementById('upload-widget')
+
+  if (widget) {
+    if (widget) {
+      widget.addEventListener('clduploadwidget:success', ((e: CustomEvent<{ detail: object }>) => {
+        console.log('clduploadwidget:success', e.detail)
+        // {
+        //  event: '<Event>',
+        //  info: '<Cloudinary Resource>',
+        //  UploadWidget // Widget Instance,
+        // }
+      }) as EventListener)
+    }
+  }
+</script>
